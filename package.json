@@ -144,9 +144,6 @@
     "webpack-notifier": "1.15.0",
     "workbox-webpack-plugin": "7.1.0"
   },
-  "engines": {
-    "node": ">=20.14.0"
-  },
   "cacheDirectories": [
     "node_modules"
   ]
