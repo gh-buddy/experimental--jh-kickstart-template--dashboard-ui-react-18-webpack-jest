@@ -98,6 +98,14 @@ export const AdministrationSlice = createSlice({
           ...state.configuration,
           env: action.payload.data,
         };
+      })
+      .addMatcher(isPending(getSystemHealth, getSystemThreadDump, getLoggers, getConfigurations, getEnv), state => {
+        state.errorMessage = null;
+        state.loading = true;
+      })
+      .addMatcher(isRejected(getSystemHealth, getSystemThreadDump, getLoggers, getConfigurations, getEnv), (state, action) => {
+        state.errorMessage = action.error.message;
+        state.loading = false;
       });
   },
 });
