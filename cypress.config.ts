@@ -22,7 +22,7 @@ export default defineConfig({
       // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return (await import('./cypress/plugins/index')).default(on, config);
     },
-    baseUrl: 'http://localhost:8080/',
+    baseUrl: 'http://localhost:9000/',
     specPattern: 'cypress/e2e/**/*.cy.ts',
     supportFile: 'cypress/support/index.ts',
     experimentalRunAllSpecs: true,
