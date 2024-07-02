@@ -28,10 +28,6 @@ export const getSystemHealth = createAsyncThunk('administration/fetch_health', a
   serializeError: serializeAxiosError,
 });
 
-export const getSystemMetrics = createAsyncThunk('administration/fetch_metrics', async () => axios.get<any>('management/jhimetrics'), {
-  serializeError: serializeAxiosError,
-});
-
 export const getSystemThreadDump = createAsyncThunk(
   'administration/fetch_thread_dump',
   async () => axios.get<any>('management/threaddump'),
@@ -79,10 +75,6 @@ export const AdministrationSlice = createSlice({
         state.loading = false;
         state.health = action.payload.data;
       })
-      .addCase(getSystemMetrics.fulfilled, (state, action) => {
-        state.loading = false;
-        state.metrics = action.payload.data;
-      })
       .addCase(getSystemThreadDump.fulfilled, (state, action) => {
         state.loading = false;
         state.threadDump = action.payload.data;
@@ -106,18 +98,7 @@ export const AdministrationSlice = createSlice({
           ...state.configuration,
           env: action.payload.data,
         };
-      })
-      .addMatcher(isPending(getSystemHealth, getSystemMetrics, getSystemThreadDump, getLoggers, getConfigurations, getEnv), state => {
-        state.errorMessage = null;
-        state.loading = true;
-      })
-      .addMatcher(
-        isRejected(getSystemHealth, getSystemMetrics, getSystemThreadDump, getLoggers, getConfigurations, getEnv),
-        (state, action) => {
-          state.errorMessage = action.error.message;
-          state.loading = false;
-        },
-      );
+      });
   },
 });
 

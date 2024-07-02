@@ -14,7 +14,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { APP_TIMESTAMP_FORMAT, APP_TWO_DIGITS_AFTER_POINT_NUMBER_FORMAT, APP_WHOLE_NUMBER_FORMAT } from 'app/config/constants';
-import { getSystemMetrics, getSystemThreadDump } from '../administration.reducer';
+import { getSystemThreadDump } from '../administration.reducer';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 
 export const MetricsPage = () => {
@@ -24,13 +24,11 @@ export const MetricsPage = () => {
   const threadDump = useAppSelector(state => state.administration.threadDump);
 
   useEffect(() => {
-    dispatch(getSystemMetrics());
     dispatch(getSystemThreadDump());
   }, []);
 
   const getMetrics = () => {
     if (!isFetching) {
-      dispatch(getSystemMetrics());
       dispatch(getSystemThreadDump());
     }
   };

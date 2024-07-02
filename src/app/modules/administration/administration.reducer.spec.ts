@@ -4,7 +4,6 @@ import { configureStore } from '@reduxjs/toolkit';
 
 import administration, {
   getSystemHealth,
-  getSystemMetrics,
   getSystemThreadDump,
   getLoggers,
   getConfigurations,
@@ -48,7 +47,6 @@ describe('Administration reducer tests', () => {
         [
           getLoggers.pending.type,
           getSystemHealth.pending.type,
-          getSystemMetrics.pending.type,
           getSystemThreadDump.pending.type,
           getConfigurations.pending.type,
           getEnv.pending.type,
@@ -70,7 +68,6 @@ describe('Administration reducer tests', () => {
         [
           getLoggers.rejected.type,
           getSystemHealth.rejected.type,
-          getSystemMetrics.rejected.type,
           getSystemThreadDump.rejected.type,
           getConfigurations.rejected.type,
           getEnv.rejected.type,
@@ -115,16 +112,6 @@ describe('Administration reducer tests', () => {
       expect(toTest).toMatchObject({
         loading: false,
         health: payload.data,
-      });
-    });
-
-    it('should update state according to a successful fetch metrics request', () => {
-      const payload = { data: { version: '3.1.3', gauges: {} } };
-      const toTest = administration(undefined, { type: getSystemMetrics.fulfilled.type, payload });
-
-      expect(toTest).toMatchObject({
-        loading: false,
-        metrics: payload.data,
       });
     });
 
@@ -186,13 +173,7 @@ describe('Administration reducer tests', () => {
       expect(getSystemHealth.fulfilled.match(result)).toBe(true);
       expect(result.payload).toBe(resolvedObject);
     });
-    it('dispatches FETCH_METRICS_PENDING and FETCH_METRICS_FULFILLED actions', async () => {
-      const result = await getSystemMetrics()(dispatch, getState, extra);
 
-      const pendingAction = dispatch.mock.calls[0][0];
-      expect(pendingAction.meta.requestStatus).toBe('pending');
-      expect(getSystemMetrics.fulfilled.match(result)).toBe(true);
-    });
     it('dispatches FETCH_THREAD_DUMP_PENDING and FETCH_THREAD_DUMP_FULFILLED actions', async () => {
       const result = await getSystemThreadDump()(dispatch, getState, extra);
 

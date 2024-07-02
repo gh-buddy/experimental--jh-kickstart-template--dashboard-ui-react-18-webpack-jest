@@ -26,16 +26,9 @@ const adminMenuItems = () => (
   </>
 );
 
-const openAPIItem = () => (
-  <MenuItem icon="book" to="/admin/docs">
-    <Translate contentKey="global.menu.admin.apidocs">API</Translate>
-  </MenuItem>
-);
-
-export const AdminMenu = ({ showOpenAPI }) => (
+export const AdminMenu = () => (
   <NavDropdown icon="users-cog" name={translate('global.menu.admin.main')} id="admin-menu" data-cy="adminMenu">
     {adminMenuItems()}
-    {showOpenAPI && openAPIItem()}
   </NavDropdown>
 );
 
