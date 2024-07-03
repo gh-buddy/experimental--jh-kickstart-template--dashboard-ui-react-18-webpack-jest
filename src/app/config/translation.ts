@@ -10,7 +10,6 @@ export const languages: any = {
   ru: { name: 'Русский' },
   fr: { name: 'Français' },
   it: { name: 'Italiano' },
-  // jhipster-needle-i18n-language-key-pipe - JHipster will add/remove languages in this object
 };
 
 export const locales = Object.keys(languages).sort();

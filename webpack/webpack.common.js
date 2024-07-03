@@ -113,7 +113,6 @@ module.exports = async options => {
             { from: './src/content/', to: 'content/' },
             { from: './src/favicon.ico', to: 'favicon.ico' },
             { from: './src/manifest.webapp', to: 'manifest.webapp' },
-            // jhipster-needle-add-assets-to-webpack - JHipster will add/remove third-party resources in this array
             { from: './src/robots.txt', to: 'robots.txt' },
           ],
         }),
@@ -130,12 +129,10 @@ module.exports = async options => {
               { pattern: './src/i18n/ru/*.json', fileName: './i18n/ru.json' },
               { pattern: './src/i18n/fr/*.json', fileName: './i18n/fr.json' },
               { pattern: './src/i18n/it/*.json', fileName: './i18n/it.json' },
-              // jhipster-needle-i18n-language-webpack - JHipster will add/remove languages in this array
             ],
           },
         }),
       ],
     },
-    // jhipster-needle-add-webpack-config - JHipster will add custom config
   );
 };
