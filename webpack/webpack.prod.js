@@ -16,7 +16,7 @@ module.exports = async () =>
     // devtool: 'source-map', // Enable source maps. Please note that this will slow down the build
     mode: ENV,
     entry: {
-      main: './src/app/index',
+      main: './src/main',
     },
     output: {
       path: utils.root('dist/'),
