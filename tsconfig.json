@@ -16,12 +16,12 @@
     "checkJs": false,
     "baseUrl": "./",
     "paths": {
-      "app/*": ["src/app/*"]
+      "@/*": ["src/*"]
     },
     "importHelpers": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src/app"],
+  "include": ["src"],
   "exclude": ["node_modules", "**/*.spec.ts", "**/*.spec.tsx"]
 }

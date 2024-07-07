@@ -70,7 +70,7 @@ module.exports = async options => {
         {
           test: /\.tsx?$/,
           use: getTsLoaderRule(options.env),
-          include: [utils.root('./src/app')],
+          include: [utils.root('./src')],
           exclude: [utils.root('node_modules')],
         },
         /*

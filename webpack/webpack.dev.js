@@ -15,7 +15,7 @@ module.exports = async options =>
   webpackMerge(await commonConfig({ env: ENV }), {
     devtool: 'cheap-module-source-map', // https://reactjs.org/docs/cross-origin-errors.html
     mode: ENV,
-    entry: ['./src/app/index'],
+    entry: ['./src/main'],
     output: {
       path: utils.root('dist/'),
       filename: '[name].[contenthash:8].js',
