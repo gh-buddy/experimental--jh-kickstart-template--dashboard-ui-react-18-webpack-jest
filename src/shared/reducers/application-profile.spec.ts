@@ -6,7 +6,6 @@ import profile, { getProfile } from './application-profile';
 
 describe('Profile reducer tests', () => {
   const initialState = {
-    ribbonEnv: '',
     inProduction: true,
   };
   describe('Common tests', () => {
@@ -18,13 +17,11 @@ describe('Profile reducer tests', () => {
     it('should return the right payload in prod', () => {
       const payload = {
         data: {
-          'display-ribbon-on-profiles': 'awesome ribbon stuff',
           activeProfiles: ['prod'],
         },
       };
 
       expect(profile(undefined, { type: getProfile.fulfilled.type, payload })).toEqual({
-        ribbonEnv: 'awesome ribbon stuff',
         inProduction: true,
       });
     });
@@ -32,13 +29,11 @@ describe('Profile reducer tests', () => {
     it('should return the right payload in dev with OpenAPI enabled', () => {
       const payload = {
         data: {
-          'display-ribbon-on-profiles': 'awesome ribbon stuff',
           activeProfiles: ['api-docs', 'dev'],
         },
       };
 
       expect(profile(undefined, { type: getProfile.fulfilled.type, payload })).toEqual({
-        ribbonEnv: 'awesome ribbon stuff',
         inProduction: false,
       });
     });

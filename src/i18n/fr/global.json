@@ -79,9 +79,6 @@
     "field": {
       "id": "ID"
     },
-    "ribbon": {
-      "dev": "Développement"
-    },
     "item-count": "Affichage {{first}} - {{second}} de {{total}} items."
   },
   "entity": {
