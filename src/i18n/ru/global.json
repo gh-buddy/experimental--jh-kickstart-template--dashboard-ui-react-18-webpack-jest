@@ -79,9 +79,6 @@
     "field": {
       "id": "ID"
     },
-    "ribbon": {
-      "dev": "Разработка"
-    },
     "item-count": "Показываем {{first}} - {{second}} из {{total}}."
   },
   "entity": {
