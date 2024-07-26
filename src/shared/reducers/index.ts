@@ -8,7 +8,6 @@ import activate from '@/modules/account/activate/activate.reducer';
 import password from '@/modules/account/password/password.reducer';
 import settings from '@/modules/account/settings/settings.reducer';
 import passwordReset from '@/modules/account/password-reset/password-reset.reducer';
-import entitiesReducers from '@/entities/reducers';
 import applicationProfile from './application-profile';
 import authentication from './authentication';
 import locale from './locale';
@@ -25,7 +24,6 @@ const rootReducer: ReducersMapObject = {
   password,
   settings,
   loadingBar,
-  ...entitiesReducers,
 };
 
 export default rootReducer;
