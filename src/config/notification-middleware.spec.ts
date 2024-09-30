@@ -35,7 +35,7 @@ describe('Notification Middleware', () => {
       isAxiosError: true,
       response: {
         data: {
-          type: 'https://www.kvmix.com/problem/problem-with-message',
+          type: 'https://www.iqkv.net/problem/problem-with-message',
           title: 'Method argument not valid',
           status: 400,
           path: '/api/foos',
@@ -114,7 +114,7 @@ describe('Notification Middleware', () => {
         data: {
           title: 'Incorrect password',
           status: 400,
-          type: 'https://www.kvmix.com/problem/invalid-password',
+          type: 'https://www.iqkv.net/problem/invalid-password',
         },
         status: 400,
       },
