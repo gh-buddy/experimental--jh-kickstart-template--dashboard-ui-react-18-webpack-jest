@@ -1,11 +1,18 @@
 {
   "extends": "./tsconfig",
-  "include": ["src"],
+  "include": [
+    "src"
+  ],
   "exclude": [],
   "compilerOptions": {
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": [
+        "src/*"
+      ]
     },
-    "types": ["jest", "webpack-env"]
+    "types": [
+      "jest",
+      "webpack-env"
+    ]
   }
 }
