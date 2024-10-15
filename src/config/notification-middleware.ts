@@ -2,8 +2,8 @@ import { translate } from 'react-jhipster';
 import { toast } from 'react-toastify';
 import { isFulfilledAction, isRejectedAction } from '@/shared/reducers/reducer.utils';
 import { isAxiosError } from 'axios';
-import { FieldErrorVM, isProblemWithMessage } from '@/shared/jhipster/problem-details';
-import { getMessageFromHeaders } from '@/shared/jhipster/headers';
+import { FieldErrorVM, isProblemWithMessage } from '@/shared/problem-details';
+import { getMessageFromHeaders } from '@/shared/headers';
 
 type TostMessage = {
   message?: string;
@@ -12,7 +12,7 @@ type TostMessage = {
 };
 
 const addErrorAlert = (message: TostMessage) => {
-  toast.error(message.key ? translate(message.key, message.data) ?? message.message : message.message);
+  toast.error(message.key ? (translate(message.key, message.data) ?? message.message) : message.message);
 };
 
 const getFieldErrorsTosts = (fieldErrors: FieldErrorVM[]): TostMessage[] =>
