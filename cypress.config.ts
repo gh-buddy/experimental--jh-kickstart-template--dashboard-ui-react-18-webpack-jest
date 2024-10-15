@@ -3,9 +3,9 @@ import { defineConfig } from 'cypress';
 export default defineConfig({
   video: false,
   fixturesFolder: 'cypress/fixtures',
-  screenshotsFolder: 'build/cypress/screenshots',
-  downloadsFolder: 'build/cypress/downloads',
-  videosFolder: 'build/cypress/videos',
+  screenshotsFolder: 'node_modules/_cypress/screenshots',
+  downloadsFolder: 'node_modules/_cypress/downloads',
+  videosFolder: 'node_modules/_cypress/videos',
   chromeWebSecurity: true,
   viewportWidth: 1200,
   viewportHeight: 720,
@@ -13,7 +13,7 @@ export default defineConfig({
   scrollBehavior: 'center',
   env: {
     authenticationUrl: '/api/authenticate',
-    jwtStorageName: 'jhi-authenticationToken',
+    jwtStorageName: 'iqkv-authenticationToken',
   },
   e2e: {
     // We've imported your old cypress plugins here.
